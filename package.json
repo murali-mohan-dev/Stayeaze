@@ -1,0 +1,18 @@
+{
+  "name": "stayease",
+  "version": "1.0.0",
+  "description": "StayEase - Smart Hotel Room Reservation System",
+  "scripts": {
+    "build": "npm run build --prefix client",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,green\" \"npm run server\" \"npm run client\"",
+    "prisma:generate": "npm run prisma:generate --prefix server",
+    "prisma:push": "npm run prisma:push --prefix server",
+    "prisma:seed": "npm run prisma:seed --prefix server",
+    "setup": "npm run prisma:push --prefix server && npm run prisma:seed --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
